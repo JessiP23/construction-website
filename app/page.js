@@ -4,9 +4,15 @@ import { useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const expertiseData = [
-  { title: 'Residential', image: '/placeholder.svg?height=600&width=800' },
-  { title: 'Commercial', image: '/placeholder.svg?height=600&width=800' },
-  { title: 'Industrial', image: '/placeholder.svg?height=600&width=800' },
+  { title: 'Kitchen Remodeling', image: '/placeholder.svg?height=600&width=800' },
+  { title: 'Bathroom Renovation', image: '/placeholder.svg?height=600&width=800' },
+  { title: 'Home Extensions', image: '/placeholder.svg?height=600&width=800' },
+]
+
+const projectsData = [
+  { title: 'Modern Kitchen Makeover', image: '/placeholder.svg?height=600&width=800', description: 'Complete kitchen renovation with custom cabinetry and state-of-the-art appliances.' },
+  { title: 'Luxurious Bathroom Spa', image: '/placeholder.svg?height=600&width=800', description: 'Transformed an outdated bathroom into a relaxing spa-like retreat.' },
+  { title: 'Cozy Attic Conversion', image: '/placeholder.svg?height=600&width=800', description: 'Converted an unused attic into a comfortable living space with plenty of natural light.' },
 ]
 
 export default function Home() {
@@ -34,28 +40,34 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen">
-      <section className="relative h-screen overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/placeholder.svg?height=1080&width=1920')",
-            filter: `blur(${Math.min(scrollPosition / 10, 10)}px)`,
-          }}
-        ></div>
+    <main className="min-h-screen bg-gray-100">
+      <section className="relative h-screen overflow-hidden bg-cover bg-center" style={{ backgroundImage: "url('/placeholder.svg?height=1080&width=1920')" }}>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
-          <h1 className="text-6xl font-bold mb-4">BuildMaster Construction</h1>
-          <p className="text-2xl mb-8">Building Dreams, Crafting Excellence</p>
-          <button className="bg-[#dbf240] text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#3f3def] hover:text-white transition-colors duration-300">
-            Get a Quote
-          </button>
+        <div className="relative z-10 flex items-center justify-between h-full container mx-auto px-4">
+          <div className="w-1/2 text-white">
+            <h1 className="text-5xl font-bold mb-4 text-shadow">HomeStyle Renovations</h1>
+            <p className="text-xl mb-8 leading-relaxed text-shadow">
+              Transforming houses into dream homes. With over 15 years of experience, 
+              we specialize in kitchen remodeling, bathroom renovations, and home extensions. 
+              Quality craftsmanship and customer satisfaction guaranteed.
+            </p>
+            <button className="bg-[#dbf240] text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#3f3def] hover:text-white transition-colors duration-300 shadow-lg">
+              Schedule a Consultation
+            </button>
+          </div>
+          <div className="w-1/2 flex justify-end">
+            <img
+              src="/placeholder.svg?height=600&width=800"
+              alt="Beautifully renovated kitchen"
+              className="rounded-lg shadow-2xl max-w-md"
+            />
+          </div>
         </div>
       </section>
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-center">Our Expertise</h2>
+          <h2 className="text-4xl font-bold mb-12 text-center text-gray-800">Our Expertise</h2>
           <div className="relative flex justify-center items-center h-[400px]">
             {expertiseData.map((item, index) => {
               const isActive = index === activeIndex
@@ -87,7 +99,7 @@ export default function Home() {
                     className="w-full h-full object-cover rounded-lg shadow-lg"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-lg">
-                    <h3 className="text-white text-2xl font-semibold">{item.title}</h3>
+                    <h3 className="text-white text-2xl font-semibold text-shadow">{item.title}</h3>
                   </div>
                 </div>
               )
@@ -108,23 +120,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-[#3f3def]">
+      <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-center text-white">Our Projects</h2>
-          <div className="grid grid-cols-1 gap-8">
-            {[
-              '/placeholder.svg?height=600&width=1200',
-              '/placeholder.svg?height=600&width=1200',
-              '/placeholder.svg?height=600&width=1200',
-            ].map((image, index) => (
-              <div key={index} className="relative overflow-hidden rounded-lg shadow-lg">
+          <h2 className="text-4xl font-bold mb-12 text-center text-gray-800">Our Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projectsData.map((project, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                 <img
-                  src={image}
-                  alt={`Project ${index + 1}`}
-                  className="w-full h-[400px] object-cover"
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-64 object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center">
-                  <h3 className="text-white text-3xl font-semibold">Project {index + 1}</h3>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-2 text-gray-800">{project.title}</h3>
+                  <p className="text-gray-600">{project.description}</p>
                 </div>
               </div>
             ))}
@@ -132,9 +141,9 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-black text-white py-8">
+      <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2023 BuildMaster Construction. All rights reserved.</p>
+          <p>&copy; 2023 HomeStyle Renovations. All rights reserved.</p>
         </div>
       </footer>
     </main>
