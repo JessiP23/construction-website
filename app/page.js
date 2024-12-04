@@ -3,6 +3,9 @@
 import { useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
+import HomeImage from '../public/home.png'
+import Image from 'next/image'
+
 const expertiseData = [
   { title: 'Kitchen Remodeling', image: '/placeholder.svg?height=600&width=800' },
   { title: 'Bathroom Renovation', image: '/placeholder.svg?height=600&width=800' },
@@ -56,8 +59,9 @@ export default function Home() {
             </button>
           </div>
           <div className="w-1/2 flex justify-end">
-            <img
-              src="/placeholder.svg?height=600&width=800"
+            <Image
+              width={1000} height={800}
+              src={HomeImage}
               alt="Beautifully renovated kitchen"
               className="rounded-lg shadow-2xl max-w-md"
             />
