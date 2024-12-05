@@ -5,8 +5,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import HomeImage from '../public/home1.png'
 import Image from 'next/image'
 
+
 const expertiseData = [
-  { title: 'Kitchen Remodeling', image: '/placeholder.svg?height=600&width=800' },
+  { title: 'Kitchen Remodeling', image: '/example.jpeg' },
   { title: 'Bathroom Renovation', image: '/placeholder.svg?height=600&width=800' },
   { title: 'Home Extensions', image: '/placeholder.svg?height=600&width=800' },
 ]
