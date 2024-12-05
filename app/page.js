@@ -73,23 +73,26 @@ export default function Home() {
         <div className="absolute inset-0 bg-[#2c1810] bg-opacity-75"></div>
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between h-full container mx-auto px-4">
           <div className="w-full md:w-1/2 text-white mb-8 md:mb-0">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-shadow">Titino Home Improvement</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-shadow">Titino Home Imrovement</h1>
             <p className="text-lg md:text-xl mb-8 leading-relaxed text-shadow">
-              With over 20 years of experience, 
-              we specialize in framing, drywall, painting, tile, floors, and more. 
-              Customer satisfaction guaranteed.
+              Transforming houses into dream homes. With over 15 years of experience, 
+              we specialize in kitchen remodeling, bathroom renovations, and home extensions. 
+              Quality craftsmanship and customer satisfaction guaranteed.
             </p>
             <button className="bg-[#dbf240] text-[#2c1810] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#3f3def] hover:text-white transition-colors duration-300 shadow-lg">
               Schedule a Consultation
             </button>
           </div>
           <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-            <Image
-              width={800} height={600}
-              src={HomeImage}
-              alt="Beautifully renovated kitchen"
-              className="rounded-lg shadow-2xl max-w-full md:max-w-md"
-            />
+            <div className="relative w-full max-w-md aspect-[4/3] overflow-hidden rounded-lg shadow-2xl">
+              <Image
+                src={HomeImage}
+                alt="Beautifully renovated kitchen"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -122,11 +125,13 @@ export default function Home() {
                       : ''
                   }`}
                 >
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover rounded-lg shadow-lg"
-                  />
+                  <div className="w-full h-full flex items-center justify-center bg-gray-200 rounded-lg">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-contain rounded-lg shadow-lg"
+                    />
+                  </div>
                   <div className="absolute inset-0 bg-[#2c1810] bg-opacity-50 flex items-center justify-center rounded-lg">
                     <h3 className="text-white text-xl md:text-2xl font-semibold text-shadow">{item.title}</h3>
                   </div>
