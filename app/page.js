@@ -8,8 +8,8 @@ import Image from 'next/image'
 
 const expertiseData = [
   { title: 'Kitchen Remodeling', image: '/example.jpeg' },
-  { title: 'Bathroom Renovation', image: '/placeholder.svg?height=600&width=800' },
-  { title: 'Home Extensions', image: '/placeholder.svg?height=600&width=800' },
+  { title: 'Bathroom Renovation', image: '/example1.jpeg' },
+  { title: 'Home Extensions', image: '/example2.jpeg' },
 ]
 
 const projectsData = [
