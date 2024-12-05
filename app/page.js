@@ -74,9 +74,9 @@ export default function Home() {
           <div className="w-full md:w-1/2 text-white mb-8 md:mb-0">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-shadow">Titino Home Improvement</h1>
             <p className="text-lg md:text-xl mb-8 leading-relaxed text-shadow">
-              Transforming houses into dream homes. With over 15 years of experience, 
-              we specialize in kitchen remodeling, bathroom renovations, and home extensions. 
-              Quality craftsmanship and customer satisfaction guaranteed.
+              With over 20 years of experience, 
+              we specialize in framing, drywall, painting, tile, floors, and more. 
+              Customer satisfaction guaranteed.
             </p>
             <button className="bg-[#dbf240] text-[#2c1810] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#3f3def] hover:text-white transition-colors duration-300 shadow-lg">
               Schedule a Consultation
