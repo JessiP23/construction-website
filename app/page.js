@@ -72,7 +72,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[#2c1810] bg-opacity-75"></div>
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-between h-full container mx-auto px-4">
           <div className="w-full md:w-1/2 text-white mb-8 md:mb-0">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-shadow">HomeStyle Renovations</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-shadow">Titino Home Improvement</h1>
             <p className="text-lg md:text-xl mb-8 leading-relaxed text-shadow">
               Transforming houses into dream homes. With over 15 years of experience, 
               we specialize in kitchen remodeling, bathroom renovations, and home extensions. 
