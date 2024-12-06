@@ -14,12 +14,12 @@ const expertiseData = [
 
 const projectsData = [
   {
-    title: 'Modern Kitchen Makeover',
+    title: 'Paint',
     description: 'Complete kitchen renovation with custom cabinetry and state-of-the-art appliances.',
     images: {
-      before: '/placeholder.svg?height=400&width=600',
-      during: '/placeholder.svg?height=400&width=600',
-      after: '/placeholder.svg?height=400&width=600'
+      before: '/paint.jpg',
+      during: '/paint1.jpg',
+      after: '/paint2.jpg'
     }
   },
   {
