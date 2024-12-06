@@ -1,7 +1,7 @@
 'use client'
 
 import { useContext, useEffect, useRef, useState } from 'react'
-import { ChevronLeft, ChevronRight, Globe, Moon, Pause, Play, Sun } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Globe, Mail, MapPin, Moon, Pause, Phone, Play, Send, Sun } from 'lucide-react'
 import HomeImage from '../public/home1.png'
 import Image from 'next/image'
 import { LanguageContext, ThemeContext, LanguageProvider, ThemeProvider } from './theme/Theme'
@@ -329,6 +329,34 @@ function Home() {
           </div>
         </div>
       </section>
+      <footer className="bg-gradient-to-r from-[#2c1810] to-[#3f3def] text-white py-16">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8">
+            <h2 className="text-4xl font-bold mb-6 animate-pulse">Get in Touch</h2>
+            <p className="text-lg mb-6">Transform your home with Titino Home Improvement. Contact us today!</p>
+            <div className="flex flex-col space-y-4">
+              <div className="flex items-center space-x-3">
+                <Phone className="w-6 h-6 text-[#dbf240]" />
+                <span>(347) 424-0746</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="w-6 h-6 text-[#dbf240]" />
+                <span>e.avila.homeimprovements@gmail.com</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-6 h-6 text-[#dbf240]" />
+                <span>Manhattan, Bronx, Staten Island, New Jersey, New York</span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div className="mt-12 text-center">
+          <p>&copy; 2024 Titino Home Improvement. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
     </main>
 
   )
