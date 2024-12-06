@@ -183,11 +183,11 @@ export default function Home() {
                 }`}
               >
                 <div className="w-full h-full flex items-center justify-center bg-gray-200 rounded-lg overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-                  />
+                <img
+  src={item.image}
+  alt={item.title}
+  className="w-full h-full object-contain rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+/>
                 </div>
                 <div className="absolute inset-0 bg-[#2c1810] bg-opacity-50 flex items-center justify-center rounded-lg">
                   <h3 className="text-white text-xl md:text-2xl font-semibold text-shadow">{item.title}</h3>
