@@ -262,54 +262,63 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center text-[#2c1810] 
-          transform transition-all duration-500 hover:scale-105 hover:text-[#3f3def]">
-          Our Work in Motion
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {videoData.map((video, index) => (
-            <div 
-              key={index} 
-              className="bg-white rounded-2xl shadow-2xl overflow-hidden 
-                transform transition-all duration-300 hover:shadow-3xl hover:-translate-y-4 
-                hover:scale-[1.02]"
-            >
-              <div className="p-6 bg-[#2c1810] text-white group">
-                <h3 className="text-2xl font-bold mb-2 transition-colors 
-                  group-hover:text-[#dbf240]">{video.title}</h3>
-                <p className="text-gray-300 line-clamp-3">{video.description}</p>
-              </div>
-              <div className="relative group">
-                <div className="relative w-full pt-[56.25%]"> {/* 16:9 Aspect Ratio */}
-                  <video
-                    ref={el => videoRefs.current[index] = el}
-                    src={video.videoUrl}
-                    poster={video.thumbnail}
-                    className="absolute top-0 left-0 w-full h-full object-cover"
-                    playsInline
-                    preload="metadata"
-                  />
-                  <button
-                    onClick={() => handleVideoPlay(index)}
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                      bg-white bg-opacity-50 hover:bg-opacity-75 p-4 rounded-full 
-                      transition-all duration-300 z-10"
-                  >
-                    {activeVideoIndex === index && isPlaying ? (
-                      <Pause className="w-8 h-8 text-[#2c1810]" />
-                    ) : (
-                      <Play className="w-8 h-8 text-[#2c1810]" />
-                    )}
-                  </button>
+    <section className="py-20 bg-gradient-to-b from-white to-[#f8f5f0]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-12 text-center text-[#2c1810] 
+            transform transition-all duration-500 hover:scale-105 hover:text-[#3f3def]">
+            Our Craftsmanship in Motion
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {videoData.map((video, index) => (
+              <div 
+                key={index} 
+                className="bg-white rounded-2xl shadow-2xl overflow-hidden 
+                  transform transition-all duration-300 hover:shadow-3xl hover:-translate-y-4 
+                  hover:scale-[1.02]"
+              >
+                <div className="p-6 bg-gradient-to-r from-[#2c1810] to-[#3f3def] text-white group">
+                  <h3 className="text-2xl font-bold mb-2 transition-colors 
+                    group-hover:text-[#dbf240]">{video.title}</h3>
+                  <p className="text-gray-200 line-clamp-3">{video.description}</p>
+                </div>
+                <div className="relative group">
+                  <div className="relative w-full pt-[75%]"> {/* 4:3 Aspect Ratio */}
+                    <video
+                      ref={el => videoRefs.current[index] = el}
+                      src={video.videoUrl}
+                      poster={video.thumbnail}
+                      className="absolute top-0 left-0 w-full h-full object-contain bg-black"
+                      playsInline
+                      preload="metadata"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                    <button
+                      onClick={() => handleVideoPlay(index)}
+                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                        bg-white bg-opacity-70 hover:bg-opacity-90 p-4 rounded-full 
+                        transition-all duration-300 z-10 group-hover:scale-110"
+                    >
+                      {activeVideoIndex === index && isPlaying ? (
+                        <Pause className="w-8 h-8 text-[#3f3def]" />
+                      ) : (
+                        <Play className="w-8 h-8 text-[#3f3def]" />
+                      )}
+                    </button>
+                  </div>
+                </div>
+                <div className="p-4 bg-gray-100">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">Duration: 1:15</span>
+                    <button className="text-[#3f3def] hover:text-[#2c1810] transition-colors duration-300">
+                      Learn More
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       <footer className="bg-[#2c1810] text-white py-8">
         <div className="container mx-auto px-4 text-center">
