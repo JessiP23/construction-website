@@ -165,7 +165,7 @@ function Home() {
   const sectionBg = theme === 'dark' ? 'bg-gray-900' : 'bg-[#f8f5f0]'
 
   return (
-    <main className={`min-h-screen ${bgColor} ${textColor}`}>
+    <main className={`min-h-screen ${bgColor} ${textColor} min-h-screen`}>
       {/* Language and Theme Toggle Buttons */}
       <div className="fixed top-4 right-4 z-50 flex space-x-4">
         <button 
@@ -330,10 +330,10 @@ function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-b from-white to-[#f8f5f0]">
+      <section className={`${sectionBg} py-12`}>
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-center text-[#2c1810] 
-            transform transition-all duration-500 hover:scale-105 hover:text-[#3f3def]">
+          <h2 className={`text-4xl font-bold mb-12 text-center ${textColor} 
+            transform transition-all duration-500 hover:scale-105 hover:text-[#3f3def] animate-fade-in-up`}>
             Our Craftsmanship in Motion
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -384,6 +384,7 @@ function Home() {
           </div>
         </div>
       </section>
+
       <footer className="bg-gradient-to-r from-[#2c1810] to-[#3f3def] text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
