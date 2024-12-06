@@ -37,12 +37,12 @@ const translations = {
 
 const projectsData = [
   {
-    title: 'Paint',
+    title: 'Bathroom Renovation',
     description: 'Complete kitchen renovation with custom cabinetry and state-of-the-art appliances.',
     images: {
-      before: '/paint.jpg',
-      during: '/paint1.jpg',
-      after: '/paint2.jpg'
+      before: '/bath1.jpg',
+      during: '/bath.MOV',
+      after: '/bath2.jpg'
     }
   },
   {
