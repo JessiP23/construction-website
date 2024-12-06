@@ -310,8 +310,7 @@ export default function Home() {
                 </div>
                 <div className="p-4 bg-gray-100">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600">Duration: 1:15</span>
-                    
+                    <span className="text-sm text-gray-600">Duration: 1:15</span>    
                   </div>
                 </div>
               </div>
