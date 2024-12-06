@@ -46,6 +46,21 @@ export default function Home() {
   const [scrollPosition, setScrollPosition] = useState(0)
   const [activeIndex, setActiveIndex] = useState(1)
   const [activeImageType, setActiveImageType] = useState('after')
+  const [activeProjects, setActiveProjects] = useState(
+    projectsData.map(project => ({
+      ...project,
+      activeImageType: 'after'
+    }))
+  )
+
+  const handleImageTypeChange = (projectIndex, imageType) => {
+    const updatedProjects = [...activeProjects]
+    updatedProjects[projectIndex] = {
+      ...updatedProjects[projectIndex],
+      activeImageType: imageType
+    }
+    setActiveProjects(updatedProjects)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -155,88 +170,57 @@ export default function Home() {
       </section>
 
       <section className="py-20 bg-[#f8f5f0]">
-  <div className="container mx-auto px-4">
-    <h2 className="text-4xl font-bold mb-12 text-center text-[#2c1810] 
-      transform transition-all duration-500 hover:scale-105 hover:text-[#3f3def]">
-      Our Projects
-    </h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projectsData.map((project, index) => (
-        <div 
-          key={index} 
-          className="bg-white rounded-2xl shadow-2xl overflow-hidden 
-            transform transition-all duration-300 hover:shadow-3xl hover:-translate-y-4 
-            hover:scale-[1.02]"
-        >
-          <div className="p-6 bg-[#2c1810] text-white group">
-            <h3 className="text-2xl font-bold mb-2 transition-colors 
-              group-hover:text-[#dbf240]">{project.title}</h3>
-            <p className="text-gray-300 line-clamp-3">{project.description}</p>
-          </div>
-          <div className="relative group">
-            <img
-              src={project.images[activeImageType]}
-              alt={`${project.title} - ${activeImageType} phase`}
-              className="w-full h-[300px] md:h-[400px] object-cover 
-                transition-transform duration-300 group-hover:scale-105"
-            />
-            <div className="absolute bottom-0 left-0 right-0 flex justify-center p-4 
-              bg-gradient-to-t from-black to-transparent">
-              <div className="flex gap-2 bg-white bg-opacity-20 backdrop-blur-sm 
-                rounded-full p-1 shadow-lg">
-                {['before', 'during', 'after'].map((type) => (
-                  <button
-                    key={type}
-                    onClick={() => setActiveImageType(type)}
-                    className={`px-4 py-2 rounded-full text-sm font-semibold 
-                      transition-all duration-300 ${
-                      activeImageType === type
-                        ? 'bg-[#2c1810] text-white scale-105'
-                        : 'text-[#2c1810] hover:bg-[#2c1810] hover:text-white'
-                    }`}
-                  >
-                    {type.charAt(0).toUpperCase() + type.slice(1)}
-                  </button>
-                ))}
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold mb-12 text-center text-[#2c1810] 
+          transform transition-all duration-500 hover:scale-105 hover:text-[#3f3def]">
+          Our Projects
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {activeProjects.map((project, index) => (
+            <div 
+              key={index} 
+              className="bg-white rounded-2xl shadow-2xl overflow-hidden 
+                transform transition-all duration-300 hover:shadow-3xl hover:-translate-y-4 
+                hover:scale-[1.02]"
+            >
+              <div className="p-6 bg-[#2c1810] text-white group">
+                <h3 className="text-2xl font-bold mb-2 transition-colors 
+                  group-hover:text-[#dbf240]">{project.title}</h3>
+                <p className="text-gray-300 line-clamp-3">{project.description}</p>
+              </div>
+              <div className="relative group">
+                <img
+                  src={project.images[project.activeImageType]}
+                  alt={`${project.title} - ${project.activeImageType} phase`}
+                  className="w-full h-[300px] md:h-[400px] object-cover 
+                    transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute bottom-0 left-0 right-0 flex justify-center p-4 
+                  bg-gradient-to-t from-black to-transparent">
+                  <div className="flex gap-2 bg-white bg-opacity-20 backdrop-blur-sm 
+                    rounded-full p-1 shadow-lg">
+                    {['before', 'during', 'after'].map((type) => (
+                      <button
+                        key={type}
+                        onClick={() => handleImageTypeChange(index, type)}
+                        className={`px-4 py-2 rounded-full text-sm font-semibold 
+                          transition-all duration-300 ${
+                          project.activeImageType === type
+                            ? 'bg-[#2c1810] text-white scale-105'
+                            : 'text-[#2c1810] hover:bg-[#2c1810] hover:text-white'
+                        }`}
+                      >
+                        {type.charAt(0).toUpperCase() + type.slice(1)}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-            
-            {/* Overlay Effect */}
-            <div className="absolute inset-0 bg-black bg-opacity-0 
-              group-hover:bg-opacity-20 transition-all duration-300 
-              flex items-center justify-center">
-              <div className="opacity-0 group-hover:opacity-100 
-                transition-opacity duration-300 flex space-x-4">
-                <button className="bg-white p-3 rounded-full shadow-lg 
-                  transform hover:scale-110 transition-transform">
-                  <svg xmlns="http://www.w3.org/2000/svg" 
-                    className="h-6 w-6 text-[#2c1810]" 
-                    fill="none" viewBox="0 0 24 24" 
-                    stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" 
-                      strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4v2m0 0v2m0-2h2m-2 2h-2m5-4v6m3 0a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                </button>
-                <button className="bg-white p-3 rounded-full shadow-lg 
-                  transform hover:scale-110 transition-transform">
-                  <svg xmlns="http://www.w3.org/2000/svg" 
-                    className="h-6 w-6 text-[#2c1810]" 
-                    fill="none" viewBox="0 0 24 24" 
-                    stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" 
-                      strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" 
-                      strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
       <footer className="bg-[#2c1810] text-white py-8">
         <div className="container mx-auto px-4 text-center">
@@ -246,4 +230,3 @@ export default function Home() {
     </main>
   )
 }
-
