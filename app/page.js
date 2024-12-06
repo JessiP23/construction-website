@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, Globe, Mail, MapPin, Moon, Pause, Phone, Pla
 import HomeImage from '../public/home1.png'
 import Image from 'next/image'
 import { LanguageContext, ThemeContext, LanguageProvider, ThemeProvider } from './theme/Theme'
+import { CompletedProjectsCarousel } from './components/Carousel'
 
 
 const expertiseData = [
@@ -382,6 +383,16 @@ function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className={`py-20 ${sectionBg}`}>
+        <div className="container mx-auto px-4">
+          <h2 className={`text-4xl font-bold mb-12 text-center ${textColor} 
+            transform transition-all duration-500 hover:scale-105 hover:text-[#3f3def] animate-fade-in-up`}>
+            Completed Projects
+          </h2>
+          <CompletedProjectsCarousel />
         </div>
       </section>
 
