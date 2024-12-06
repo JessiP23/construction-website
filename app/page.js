@@ -311,9 +311,7 @@ export default function Home() {
                 <div className="p-4 bg-gray-100">
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-600">Duration: 1:15</span>
-                    <button className="text-[#3f3def] hover:text-[#2c1810] transition-colors duration-300">
-                      Learn More
-                    </button>
+                    
                   </div>
                 </div>
               </div>
