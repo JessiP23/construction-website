@@ -49,9 +49,9 @@ const projectsData = [
     title: 'Luxurious Bathroom Spa',
     description: 'Transformed an outdated bathroom into a relaxing spa-like retreat.',
     images: {
-      before: '/placeholder.svg?height=400&width=600',
-      during: '/placeholder.svg?height=400&width=600',
-      after: '/placeholder.svg?height=400&width=600'
+      before: '/aaa5.jpg',
+      during: '/aaa2.jpg',
+      after: '/aaa.jpg'
     }
   },
   {
