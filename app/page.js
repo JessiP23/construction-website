@@ -211,7 +211,7 @@ export default function Home() {
       </div>
     </section>
 
-      <section className="py-20 bg-[#f8f5f0]">
+    <section className="py-20 bg-[#f8f5f0]">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-12 text-center text-[#2c1810] 
           transform transition-all duration-500 hover:scale-105 hover:text-[#3f3def] animate-fade-in-up">
@@ -231,32 +231,31 @@ export default function Home() {
                   group-hover:text-[#dbf240]">{project.title}</h3>
                 <p className="text-gray-200 line-clamp-3">{project.description}</p>
               </div>
-              <div className="relative group">
+              <div className="relative group aspect-w-4 aspect-h-3">
                 <img
                   src={project.images[project.activeImageType]}
                   alt={`${project.title} - ${project.activeImageType} phase`}
-                  className="w-full h-[300px] md:h-[400px] object-cover 
+                  className="w-full h-full object-contain 
                     transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute bottom-0 left-0 right-0 flex justify-center p-4 
-                  bg-gradient-to-t from-black to-transparent">
-                  <div className="flex gap-2 bg-white bg-opacity-20 backdrop-blur-sm 
-                    rounded-full p-1 shadow-lg">
-                    {['before', 'during', 'after'].map((type) => (
-                      <button
-                        key={type}
-                        onClick={() => handleImageTypeChange(index, type)}
-                        className={`px-4 py-2 rounded-full text-sm font-semibold 
-                          transition-all duration-300 ${
-                          project.activeImageType === type
-                            ? 'bg-[#2c1810] text-white scale-105'
-                            : 'text-[#2c1810] hover:bg-[#2c1810] hover:text-white'
-                        }`}
-                      >
-                        {type.charAt(0).toUpperCase() + type.slice(1)}
-                      </button>
-                    ))}
-                  </div>
+              </div>
+              <div className="absolute bottom-4 left-0 right-0 flex justify-center">
+                <div className="flex gap-2 bg-white bg-opacity-20 backdrop-blur-sm 
+                  rounded-full p-1 shadow-lg">
+                  {['before', 'during', 'after'].map((type) => (
+                    <button
+                      key={type}
+                      onClick={() => handleImageTypeChange(index, type)}
+                      className={`px-4 py-2 rounded-full text-sm font-semibold 
+                        transition-all duration-300 ${
+                        project.activeImageType === type
+                          ? 'bg-[#2c1810] text-white scale-105'
+                          : 'text-[#2c1810] hover:bg-[#2c1810] hover:text-white'
+                      }`}
+                    >
+                      {type.charAt(0).toUpperCase() + type.slice(1)}
+                    </button>
+                  ))}
                 </div>
               </div>
             </div>
