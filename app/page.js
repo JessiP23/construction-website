@@ -183,9 +183,6 @@ function Home() {
       activeImageType: 'after'
     }))
   )
-  const [activeVideoIndex, setActiveVideoIndex] = useState(0)
-  const [isPlaying, setIsPlaying] = useState(false)
-  const videoRefs = useRef([])
 
   const { language } = useContext(LanguageContext)
   const { theme, toggleTheme } = useContext(ThemeContext)
