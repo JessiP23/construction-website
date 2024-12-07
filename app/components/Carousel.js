@@ -44,14 +44,14 @@ export function CompletedProjectsCarousel () {
                 height={300}
                 className="w-full h-48 object-cover rounded-md mb-4"
               />
-              <h3 className="text-lg font-semibold">{project.title}</h3>
+              <h3 className="text-lg text-black font-semibold">{project.title}</h3>
             </div>
           </div>
         ))}
       </div>
 
       {/* Modal */}
-      <div id="projectModal" className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+      <div id="projectModal" className="fixed inset-0 bg-black bg-opacity-50 items-center justify-center hidden">
         <div className="bg-white p-8 rounded-lg max-w-lg w-full">
           {selectedProject && (
             <>
