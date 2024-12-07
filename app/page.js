@@ -94,8 +94,6 @@ const translations = {
 
 const projectsData = [
   {
-    title: 'Bathroom Renovation',
-    description: 'Complete kitchen renovation with custom cabinetry and state-of-the-art appliances.',
     images: {
       before: '/bath1.jpg',
       during: '/bath.MOV',
@@ -103,8 +101,6 @@ const projectsData = [
     }
   },
   {
-    title: 'Luxurious Bathroom Spa',
-    description: 'Transformed an outdated bathroom into a relaxing spa-like retreat.',
     images: {
       before: '/aaa5.jpg',
       during: '/aaa2.jpg',
