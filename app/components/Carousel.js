@@ -8,32 +8,34 @@ const completedProjects = [
   { id: 4, title: 'Elegant Master Bedroom', image: '/completed-bedroom.jpg' },
   { id: 5, title: 'Spacious Home Office', image: '/completed-office.jpg' },
 ]
- 
+
 export function CompletedProjectsCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentPosition, setCurrentPosition] = useState(0)
   const carouselRef = useRef(null)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % completedProjects.length)
-    }, 3000) // Change image every 3 seconds
+      setCurrentPosition((prevPosition) => {
+        const newPosition = prevPosition + 0.1 // Adjust this value to control the speed
+        return newPosition >= 100 ? 0 : newPosition
+      })
+    }, 16) // ~60 fps for smooth animation
 
     return () => clearInterval(interval)
   }, [])
 
   useEffect(() => {
     if (carouselRef.current) {
-      carouselRef.current.style.transition = 'transform 0.5s ease-in-out'
-      carouselRef.current.style.transform = `translateX(-${currentIndex * 20}%)`
+      carouselRef.current.style.transform = `translateX(-${currentPosition}%)`
     }
-  }, [currentIndex])
+  }, [currentPosition])
 
   return (
     <div className="w-full overflow-hidden">
       <div className="relative">
         <div
           ref={carouselRef}
-          className="flex"
+          className="flex transition-transform duration-[16ms] ease-linear"
           style={{ width: `${completedProjects.length * 100}%` }}
         >
           {[...completedProjects, ...completedProjects].map((project, index) => (
@@ -61,4 +63,3 @@ export function CompletedProjectsCarousel() {
     </div>
   )
 }
-
