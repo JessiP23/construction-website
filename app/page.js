@@ -458,26 +458,14 @@ function Home() {
                 <div className="relative group">
                   <div className="relative w-full pt-[75%]"> {/* 4:3 Aspect Ratio */}
                     <video
-                      ref={el => videoRefs.current[index] = el}
-                      src={video.videoUrl}
-                      poster={video.thumbnail}
                       className="absolute top-0 left-0 w-full h-full object-contain bg-black"
+                      controls
+                      autoPlay
                       playsInline
                       preload="metadata"
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
-                    <button
-                      onClick={() => handleVideoPlay(index)}
-                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                        bg-white bg-opacity-70 hover:bg-opacity-90 p-4 rounded-full 
-                        transition-all duration-300 z-10 group-hover:scale-110"
-                    >
-                      {activeVideoIndex === index && isPlaying ? (
-                        <Pause className="w-8 h-8 text-[#3f3def]" />
-                      ) : (
-                        <Play className="w-8 h-8 text-[#3f3def]" />
-                      )}
-                    </button>
+              
+                    
                   </div>
                 </div>
                 <div className="p-4 bg-gray-100">
