@@ -380,12 +380,24 @@ function Home() {
                   <p className="text-gray-200 line-clamp-3">{translations[language].projectsData[index].description}</p>
                 </div>
                 <div className="relative group aspect-w-4 aspect-h-3">
-                  <img
-                    src={project.images[project.activeImageType]}
-                    alt={`${project.title} - ${project.activeImageType} phase`}
-                    className="w-full h-full object-contain 
-                      transition-transform duration-300 group-hover:scale-105"
-                  />
+                  {project.images[project.activeImageType].toLowerCase().endsWith('.mov') || 
+                  project.images[project.activeImageType].toLowerCase().endsWith('.mp4') ? (
+                    <video
+                      src={project.images[project.activeImageType]}
+                      className="w-full h-full object-contain 
+                        transition-transform duration-300 group-hover:scale-105"
+                      controls
+                      autoPlay
+                      playsInline
+                    />
+                  ) : (
+                    <img
+                      src={project.images[project.activeImageType]}
+                      alt={`Project ${project.activeImageType} phase`}
+                      className="w-full h-full object-contain 
+                        transition-transform duration-300 group-hover:scale-105"
+                    />
+                  )}
                 </div>
                 <div className="absolute bottom-4 left-0 right-0 flex justify-center">
                 <div className="flex gap-2 bg-white bg-opacity-20 backdrop-blur-sm 
