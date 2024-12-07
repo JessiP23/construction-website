@@ -50,7 +50,7 @@ export function CompletedProjectsCarousel () {
       </div>
 
       {/* Modal */}
-      <div id="projectModal" className="fixed inset-0 bg-black bg-opacity-50 items-center justify-center hidden">
+      <div id="projectModal" className="fixed inset-0 bg-black bg-opacity-50 items-center justify-center hidden text-black">
         <div className="bg-white p-8 rounded-lg max-w-lg w-full">
           {selectedProject && (
             <>
