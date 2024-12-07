@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import { X } from 'lucide-react'
 
 const completedProjects = [
   { id: 1, title: 'Modern Kitchen Remodel', image: '/comp.jpg', description: 'A sleek, contemporary kitchen with state-of-the-art appliances and elegant finishes.' },
@@ -15,16 +16,34 @@ const completedProjects = [
 
 export function CompletedProjectsCarousel () {
   const [selectedProject, setSelectedProject] = useState(null)
+  const [isModelOpen, setIsModelOpen] = useState(false)
 
   const openModal = (project) => {
     setSelectedProject(project)
-    document.getElementById('projectModal').style.display = 'block'
+    setIsModelOpen(true)
   }
 
   const closeModal = () => {
     setSelectedProject(null)
-    document.getElementById('projectModal').style.display = 'none'
+    setIsModelOpen(false)
   }
+
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        closeModal()
+      }
+    }
+
+    if (isModelOpen) {
+      document.addEventListener('keydown', handleEscape)
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [isModelOpen])
+
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -50,29 +69,32 @@ export function CompletedProjectsCarousel () {
       </div>
 
       {/* Modal */}
-      <div id="projectModal" className="fixed inset-0 bg-black bg-opacity-50 items-center justify-center hidden text-black">
-        <div className="bg-white p-8 rounded-lg max-w-lg w-full">
-          {selectedProject && (
-            <>
-              <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
-              <Image
-                src={selectedProject.image}
-                alt={selectedProject.title}
-                width={800}
-                height={600}
-                className="w-full h-auto rounded-md mb-4"
-              />
-              <p className="mb-4">{selectedProject.description}</p>
-              <button
-                onClick={closeModal}
-                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-              >
-                Close
-              </button>
-            </>
-          )}
+      {isModelOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 text-black">
+          <div className="bg-white p-8 rounded-lg max-w-lg w-full mx-4 relative">
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+              aria-label="Close modal"
+            >
+              <X size={24} />
+            </button>
+            {selectedProject && (
+              <>
+                <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
+                <Image
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto rounded-md mb-4"
+                />
+                <p className="mb-4">{selectedProject.description}</p>
+              </>
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }
