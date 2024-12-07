@@ -6,6 +6,7 @@ import HomeImage from '../public/home1.png'
 import Image from 'next/image'
 import { LanguageContext, ThemeContext, LanguageProvider, ThemeProvider } from './theme/Theme'
 import { CompletedProjectsCarousel } from './components/Carousel'
+import { AnimatePresence, motion } from 'framer-motion'
 
 
 const expertiseData = [
@@ -250,27 +251,87 @@ function Home() {
     <main className={`min-h-screen ${bgColor} ${textColor} min-h-screen`}>
       {/* Language and Theme Toggle Buttons */}
       <div className="fixed top-4 right-4 z-50 flex space-x-4">
-        <button 
-          onClick={toggleLanguage}
-          className={`p-2 rounded-full ${
-            theme === 'dark' 
-              ? 'bg-gray-700 text-white hover:bg-gray-600' 
-              : 'bg-white text-black shadow-lg hover:bg-gray-100'
-          } transition-all duration-300`}
-        >
-          <Globe className="w-6 h-6" />
-        </button>
-        <button 
-          onClick={toggleTheme}
-          className={`p-2 rounded-full ${
-            theme === 'dark' 
-              ? 'bg-gray-700 text-white hover:bg-gray-600' 
-              : 'bg-white text-black shadow-lg hover:bg-gray-100'
-          } transition-all duration-300`}
-        >
-          {theme === 'dark' ? <Sun className="w-6 h-6" /> : <Moon className="w-6 h-6" />}
-        </button>
-      </div>
+      {/* Language Toggle */}
+      <motion.button 
+        onClick={toggleLanguage}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className={`
+          relative overflow-hidden
+          w-16 h-10 rounded-full
+          flex items-center justify-center
+          ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}
+          shadow-lg transition-all duration-300
+          border ${theme === 'dark' ? 'border-gray-700' : 'border-gray-200'}
+        `}
+      >
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={language}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="absolute flex items-center"
+          >
+            {language === 'en' ? (
+              <div className="flex items-center space-x-2">
+                <Globe className={`w-5 h-5 ${theme === 'dark' ? 'text-white' : 'text-gray-700'}`} />
+                <span className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>EN</span>
+              </div>
+            ) : (
+              <div className="flex items-center space-x-2">
+                <Globe className={`w-5 h-5 ${theme === 'dark' ? 'text-white' : 'text-gray-700'}`} />
+                <span className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-gray-800'}`}>ES</span>
+              </div>
+            )}
+          </motion.div>
+        </AnimatePresence>
+      </motion.button>
+
+      {/* Theme Toggle */}
+      <motion.button 
+        onClick={toggleTheme}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className={`
+          relative overflow-hidden
+          w-16 h-10 rounded-full
+          flex items-center 
+          ${theme === 'dark' 
+            ? 'bg-gradient-to-r from-gray-800 to-gray-900 border-gray-700' 
+            : 'bg-gradient-to-r from-gray-100 to-white border-gray-200'}
+          shadow-lg transition-all duration-300
+          border
+        `}
+      >
+        <AnimatePresence mode="wait">
+          {theme === 'dark' ? (
+            <motion.div
+              key="dark"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              transition={{ duration: 0.3 }}
+              className="absolute left-1 flex items-center justify-center w-8 h-8 bg-gray-700 rounded-full"
+            >
+              <Moon className="w-5 h-5 text-white" />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="light"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3 }}
+              className="absolute right-1 flex items-center justify-center w-8 h-8 bg-yellow-400 rounded-full"
+            >
+              <Sun className="w-5 h-5 text-white" />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.button>
+    </div>
 
       <section className={`relative h-screen overflow-hidden bg-cover bg-center ${theme === 'dark' ? 'bg-gray-900' : ''}`} style={{ backgroundImage: "url('/home1.png')" }}>
         <div className={`absolute inset-0 ${theme === 'dark' ? 'bg-black' : 'bg-[#2c1810]'} bg-opacity-75`}></div>
