@@ -378,7 +378,7 @@ function Home() {
               >
                 <div className="p-8 bg-gradient-to-r from-[#2c1810] to-[#3f3def] text-white group">
                   <h3 className="text-2xl font-bold mb-2 transition-colors 
-                    group-hover:text-[#dbf240]">{translations[language].projectsData[index].description}</h3>
+                    group-hover:text-[#dbf240]">{translations[language].projectsData[index].title}</h3>
                   <p className="text-gray-200 line-clamp-3">{translations[language].projectsData[index].description}</p>
                 </div>
                 <div className="relative group flex-grow flex items-center justify-center" style={{height: '450px'}}>
