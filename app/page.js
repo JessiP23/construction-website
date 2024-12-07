@@ -331,9 +331,11 @@ function Home() {
                   }`}
                 >
                   <div className="w-full h-full flex items-center justify-center bg-gray-200 rounded-lg overflow-hidden">
-                  <img
+                  <Image
+                    width={600}
+                    height={600}
+                    alt="Expertise images"
                     src={item.image}
-                    alt={item.title}
                     className="w-full h-full object-contain rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
                   />
                   </div>
