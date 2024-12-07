@@ -140,9 +140,9 @@ const projectsData = [
   },
   {
     images: {
-      before: '/placeholder.svg?height=400&width=600',
-      during: '/placeholder.svg?height=400&width=600',
-      after: '/placeholder.svg?height=400&width=600'
+      before: '/door1.jpg',
+      during: '/door2.jpg',
+      after: '/door3.jpg',
     }
   },
 ]
