@@ -362,79 +362,79 @@ function Home() {
       </section>
 
       <section className={`py-20 ${sectionBg}`}>
-  <div className="container mx-auto px-4">
-    <h2 className={`text-4xl font-bold mb-12 text-center ${textColor} 
-      transform transition-all duration-500 hover:scale-105 hover:text-[#3f3def] animate-fade-in-up`}>
-      {translations[language].projects}
-    </h2>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {activeProjects.map((project, index) => (
-        <div 
-          key={index} 
-          className={`${cardBg} rounded-2xl shadow-2xl overflow-hidden 
-            transform transition-all duration-300 hover:shadow-3xl hover:-translate-y-4 
-            hover:scale-[1.02] animate-fade-in-up flex flex-col`}
-          style={{
-            animationDelay: `${index * 200}ms`,
-            height: '700px', // Fixed total height
-          }}
-        >
-          {/* Header Section */}
-          <div className="p-8 bg-gradient-to-r from-[#2c1810] to-[#3f3def] text-white group h-[150px]">
-            <h3 className="text-2xl font-bold mb-2 transition-colors 
-              group-hover:text-[#dbf240] line-clamp-2">{translations[language].projectsData[index].title}</h3>
-            <p className="text-gray-200 line-clamp-3">{translations[language].projectsData[index].description}</p>
-          </div>
+        <div className="container mx-auto px-4">
+          <h2 className={`text-4xl font-bold mb-12 text-center ${textColor} 
+            transform transition-all duration-500 hover:scale-105 hover:text-[#3f3def] animate-fade-in-up`}>
+            {translations[language].projects}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {activeProjects.map((project, index) => (
+              <div 
+                key={index} 
+                className={`${cardBg} rounded-2xl shadow-2xl overflow-hidden 
+                  transform transition-all duration-300 hover:shadow-3xl hover:-translate-y-4 
+                  hover:scale-[1.02] animate-fade-in-up flex flex-col`}
+                style={{
+                  animationDelay: `${index * 200}ms`,
+                  height: '700px', // Fixed total height
+                }}
+              >
+                {/* Header Section */}
+                <div className="p-8 bg-gradient-to-r from-[#2c1810] to-[#3f3def] text-white group h-[150px]">
+                  <h3 className="text-2xl font-bold mb-2 transition-colors 
+                    group-hover:text-[#dbf240] line-clamp-2">{translations[language].projectsData[index].title}</h3>
+                  <p className="text-gray-200 line-clamp-3">{translations[language].projectsData[index].description}</p>
+                </div>
 
-          {/* Image/Video Section */}
-          <div className="flex-grow relative group" style={{height: '450px'}}>
-            {project.images[project.activeImageType].toLowerCase().endsWith('.mov') || 
-            project.images[project.activeImageType].toLowerCase().endsWith('.mp4') ? (
-              <video
-                src={project.images[project.activeImageType]}
-                className="w-full h-full object-cover 
-                  transition-transform duration-300 group-hover:scale-105"
-                controls
-                autoPlay
-                playsInline
-              />
-            ) : (
-              <Image
-                width={900}
-                height={600}
-                src={project.images[project.activeImageType]}
-                alt={`Project ${project.activeImageType} phase`}
-                className="w-full h-full object-cover 
-                  transition-transform duration-300 group-hover:scale-105"
-              />
-            )}
-          </div>
+                {/* Image/Video Section */}
+                <div className="flex-grow relative group" style={{height: '450px'}}>
+                  {project.images[project.activeImageType].toLowerCase().endsWith('.mov') || 
+                  project.images[project.activeImageType].toLowerCase().endsWith('.mp4') ? (
+                    <video
+                      src={project.images[project.activeImageType]}
+                      className="w-full h-full object-cover 
+                        transition-transform duration-300 group-hover:scale-105"
+                      controls
+                      autoPlay
+                      playsInline
+                    />
+                  ) : (
+                    <Image
+                      width={900}
+                      height={600}
+                      src={project.images[project.activeImageType]}
+                      alt={`Project ${project.activeImageType} phase`}
+                      className="w-full h-full object-cover 
+                        transition-transform duration-300 group-hover:scale-105"
+                    />
+                  )}
+                </div>
 
-          {/* Button Section */}
-          <div className="h-[100px] flex justify-center items-center">
-            <div className="flex gap-2 bg-white bg-opacity-20 backdrop-blur-sm 
-              rounded-full p-1 shadow-lg">
-              {['before', 'during', 'after'].map((type) => (
-                <button
-                  key={type}
-                  onClick={() => handleImageTypeChange(index, type)}
-                  className={`px-4 py-2 rounded-full text-sm font-semibold 
-                    transition-all duration-300 ${
-                    project.activeImageType === type
-                      ? 'bg-[#2c1810] text-white scale-105'
-                      : 'text-[#2c1810] hover:bg-[#2c1810] hover:text-white'
-                  }`}
-                >
-                  {type.charAt(0).toUpperCase() + type.slice(1)}
-                </button>
-              ))}
-            </div>
+                {/* Button Section */}
+                <div className="h-[100px] flex justify-center items-center">
+                  <div className="flex gap-2 bg-white bg-opacity-20 backdrop-blur-sm 
+                    rounded-full p-1 shadow-lg">
+                    {['before', 'during', 'after'].map((type) => (
+                      <button
+                        key={type}
+                        onClick={() => handleImageTypeChange(index, type)}
+                        className={`px-4 py-2 rounded-full text-sm font-semibold 
+                          transition-all duration-300 ${
+                          project.activeImageType === type
+                            ? 'bg-[#2c1810] text-white scale-105'
+                            : 'text-[#2c1810] hover:bg-[#2c1810] hover:text-white'
+                        }`}
+                      >
+                        {type.charAt(0).toUpperCase() + type.slice(1)}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
       <section className={`${sectionBg} py-12`}>
         <div className="container mx-auto px-4">
