@@ -23,6 +23,7 @@ const translations = {
     projects: 'Our Projects',
     craftsmanship: 'Our Craftsmanship in Motion',
     footer: '© 2024 Titino Home Improvement. All rights reserved.',
+    craftsmanship: 'Our Craftsmanship in Motion',
 
     projectsData: [
       {
@@ -71,6 +72,7 @@ const translations = {
     projects: 'Nuestros Proyectos',
     craftsmanship: 'Nuestra Artesanía en Movimiento',
     footer: '© 2024 Mejoras para el Hogar Titino. Todos los derechos reservados.',
+    craftsmanship: 'Nuestro Trabajo en Movimiento',
 
     projectsData: [
       {
@@ -408,7 +410,7 @@ function Home() {
         <div className="container mx-auto px-4">
           <h2 className={`text-4xl font-bold mb-12 text-center ${textColor} 
             transform transition-all duration-500 hover:scale-105 hover:text-[#3f3def] animate-fade-in-up`}>
-            Our Craftsmanship in Motion
+            {translations[language].craftsmanship}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {videoData.map((video, index) => (
