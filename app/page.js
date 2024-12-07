@@ -379,7 +379,7 @@ function Home() {
                     group-hover:text-[#dbf240]">{translations[language].projectsData[index].description}</h3>
                   <p className="text-gray-200 line-clamp-3">{translations[language].projectsData[index].description}</p>
                 </div>
-                <div className="relative group flex-grow flex items-center justify-center" style={{height: '500px'}}>
+                <div className="relative group flex-grow flex items-center justify-center" style={{height: '450px'}}>
                   {project.images[project.activeImageType].toLowerCase().endsWith('.mov') || 
                   project.images[project.activeImageType].toLowerCase().endsWith('.mp4') ? (
                     <video
