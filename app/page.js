@@ -373,15 +373,21 @@ function Home() {
           key={index} 
           className={`${cardBg} rounded-2xl shadow-2xl overflow-hidden 
             transform transition-all duration-300 hover:shadow-3xl hover:-translate-y-4 
-            hover:scale-[1.02] animate-fade-in-up`}
-          style={{animationDelay: `${index * 200}ms`}}
+            hover:scale-[1.02] animate-fade-in-up flex flex-col`}
+          style={{
+            animationDelay: `${index * 200}ms`,
+            height: '700px', // Fixed total height
+          }}
         >
-          <div className="p-8 bg-gradient-to-r from-[#2c1810] to-[#3f3def] text-white group">
+          {/* Header Section */}
+          <div className="p-8 bg-gradient-to-r from-[#2c1810] to-[#3f3def] text-white group h-[150px]">
             <h3 className="text-2xl font-bold mb-2 transition-colors 
-              group-hover:text-[#dbf240]">{translations[language].projectsData[index].title}</h3>
+              group-hover:text-[#dbf240] line-clamp-2">{translations[language].projectsData[index].title}</h3>
             <p className="text-gray-200 line-clamp-3">{translations[language].projectsData[index].description}</p>
           </div>
-          <div className="relative group flex-grow flex items-center justify-center" style={{height: '450px'}}>
+
+          {/* Image/Video Section */}
+          <div className="flex-grow relative group" style={{height: '450px'}}>
             {project.images[project.activeImageType].toLowerCase().endsWith('.mov') || 
             project.images[project.activeImageType].toLowerCase().endsWith('.mp4') ? (
               <video
@@ -403,7 +409,9 @@ function Home() {
               />
             )}
           </div>
-          <div className="flex justify-center py-4">
+
+          {/* Button Section */}
+          <div className="h-[100px] flex justify-center items-center">
             <div className="flex gap-2 bg-white bg-opacity-20 backdrop-blur-sm 
               rounded-full p-1 shadow-lg">
               {['before', 'during', 'after'].map((type) => (
