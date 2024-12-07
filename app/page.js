@@ -22,7 +22,35 @@ const translations = {
     expertise: 'Our Expertise',
     projects: 'Our Projects',
     craftsmanship: 'Our Craftsmanship in Motion',
-    footer: '© 2024 Titino Home Improvement. All rights reserved.'
+    footer: '© 2024 Titino Home Improvement. All rights reserved.',
+
+    projectsData: [
+      {
+        title: 'Bathroom Renovation',
+        description: 'Complete kitchen renovation with custom cabinetry and state-of-the-art appliances.',
+      },
+      {
+        title: "Luxurious Bathroom Spa",
+        description: "Transformed an outdated bathroom into a relaxing spa-like retreat.",
+      },
+      {
+        title: 'Cozy Attic Conversion',
+        description: 'Converted an unused attic into a comfortable living space with plenty of natural light.',
+      }
+    ],
+
+
+    // New translations for videoData
+    videoData: [
+      {
+        title: 'Kitchen Transformation',
+        description: 'Watch our complete kitchen renovation process from start to finish.',
+      },
+      {
+        title: 'Bathroom Makeover',
+        description: 'See how we turn an outdated bathroom into a modern sanctuary.',
+      }
+    ]
   },
   es: {
     title: 'Mejoras para el Hogar Titino',
@@ -31,7 +59,35 @@ const translations = {
     expertise: 'Nuestra Experiencia',
     projects: 'Nuestros Proyectos',
     craftsmanship: 'Nuestra Artesanía en Movimiento',
-    footer: '© 2024 Mejoras para el Hogar Titino. Todos los derechos reservados.'
+    footer: '© 2024 Mejoras para el Hogar Titino. Todos los derechos reservados.',
+
+    projectsData: [
+      {
+        title: 'Renovación de Baño',
+        description: 'Renovación completa de cocina con gabinetes personalizados y electrodomésticos de última generación.'
+      },
+      {
+        title: 'Spa de Baño Lujoso',
+        description: 'Transformamos un baño anticuado en un retiro relajante tipo spa.'
+      },
+      {
+        title: 'Conversión de Ático Acogedor',
+        description: 'Convertimos un ático sin uso en un espacio habitable cómodo con abundante luz natural.'
+      }
+    ],
+
+    // Spanish translations for videoData
+    videoData: [
+      {
+        title: 'Transformación de Cocina',
+        description: 'Mira nuestro proceso completo de renovación de cocina de principio a fin.'
+      },
+      {
+        title: 'Renovación de Baño',
+        description: 'Descubre cómo convertimos un baño anticuado en un santuario moderno.'
+      }
+    ]
+
   }
 }
 
@@ -295,8 +351,8 @@ function Home() {
               >
                 <div className="p-6 bg-gradient-to-r from-[#2c1810] to-[#3f3def] text-white group">
                   <h3 className="text-2xl font-bold mb-2 transition-colors 
-                    group-hover:text-[#dbf240]">{project.title}</h3>
-                  <p className="text-gray-200 line-clamp-3">{project.description}</p>
+                    group-hover:text-[#dbf240]">{translations[language].projectsData[index].description}</h3>
+                  <p className="text-gray-200 line-clamp-3">{translations[language].projectsData[index].description}</p>
                 </div>
                 <div className="relative group aspect-w-4 aspect-h-3">
                   <img

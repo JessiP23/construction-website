@@ -8,7 +8,7 @@ const completedProjects = [
   { id: 4, title: 'Elegant Master Bedroom', image: '/completed-bedroom.jpg' },
   { id: 5, title: 'Spacious Home Office', image: '/completed-office.jpg' },
 ]
-
+ 
 export function CompletedProjectsCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const carouselRef = useRef(null)
