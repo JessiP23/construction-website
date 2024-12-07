@@ -379,22 +379,24 @@ function Home() {
                     group-hover:text-[#dbf240]">{translations[language].projectsData[index].description}</h3>
                   <p className="text-gray-200 line-clamp-3">{translations[language].projectsData[index].description}</p>
                 </div>
-                <div className="relative group aspect-w-4 aspect-h-3">
+                <div className="relative group flex-grow flex items-center justify-center" style={{height: '300px'}}>
                   {project.images[project.activeImageType].toLowerCase().endsWith('.mov') || 
                   project.images[project.activeImageType].toLowerCase().endsWith('.mp4') ? (
                     <video
                       src={project.images[project.activeImageType]}
-                      className="w-full h-full object-contain 
+                      className="w-full h-full object-cover 
                         transition-transform duration-300 group-hover:scale-105"
                       controls
                       autoPlay
                       playsInline
                     />
                   ) : (
-                    <img
+                    <Image
+                      width={900}
+                      height={600}
                       src={project.images[project.activeImageType]}
                       alt={`Project ${project.activeImageType} phase`}
-                      className="w-full h-full object-contain 
+                      className="w-full h-full object-cover 
                         transition-transform duration-300 group-hover:scale-105"
                     />
                   )}
