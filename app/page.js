@@ -24,6 +24,7 @@ const translations = {
     craftsmanship: 'Our Craftsmanship in Motion',
     footer: '© 2024 Titino Home Improvement. All rights reserved.',
     craftsmanship: 'Our Craftsmanship in Motion',
+    completed: 'Completed Projects',
 
     projectsData: [
       {
@@ -73,6 +74,7 @@ const translations = {
     craftsmanship: 'Nuestra Artesanía en Movimiento',
     footer: '© 2024 Mejoras para el Hogar Titino. Todos los derechos reservados.',
     craftsmanship: 'Nuestro Trabajo en Movimiento',
+    completed: 'Proyectos Completados',
 
     projectsData: [
       {
@@ -465,7 +467,7 @@ function Home() {
         <div className="container mx-auto px-4">
           <h2 className={`text-4xl font-bold mb-12 text-center ${textColor} 
             transform transition-all duration-500 hover:scale-105 hover:text-[#3f3def] animate-fade-in-up`}>
-            Completed Projects
+            {translations[language].completed}
           </h2>
           <CompletedProjectsCarousel />
         </div>
