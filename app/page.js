@@ -191,28 +191,6 @@ function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext)
   const { toggleLanguage } = useContext(LanguageContext)
 
-  const handleVideoPlay = (index) => {
-    // Pause all other videos
-    videoRefs.current.forEach((video, i) => {
-      if (i !== index && video) {
-        video.pause();
-      }
-    });
-
-    // Toggle play/pause for the clicked video
-    const video = videoRefs.current[index];
-    if (video) {
-      if (video.paused) {
-        video.play();
-        setIsPlaying(true);
-      } else {
-        video.pause();
-        setIsPlaying(false);
-      }
-    }
-    setActiveVideoIndex(index);
-  }
-
   const handleImageTypeChange = (projectIndex, imageType) => {
     const updatedProjects = [...activeProjects]
     updatedProjects[projectIndex] = {
