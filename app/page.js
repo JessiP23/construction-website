@@ -86,7 +86,7 @@ const translations = {
         description: 'Renovación completa de cocina con gabinetes personalizados y electrodomésticos de última generación.'
       },
       {
-        title: 'Spa de Baño Lujoso',
+        title: 'Drivewall',
         description: 'Transformamos un baño anticuado en un retiro relajante tipo spa.'
       },
       {
@@ -109,13 +109,13 @@ const translations = {
 
     expertiseData: [
       {
-        title: 'Remodelacion de cocina',
+        title: 'Tile de cocina',
       },
       {
-        title: 'Renovación de baño',
+        title: 'Renovación de escaleras',
       }, 
       {
-        title: 'Extensiones de casa',
+        title: 'Diseño de moldura',
       }
     ]
 
@@ -126,9 +126,9 @@ const translations = {
 const projectsData = [
   {
     images: {
-      before: '/bath1.jpg',
+      before: '/bath2.jpg',
       during: '/bath.MOV',
-      after: '/bath2.jpg'
+      after: '/bath1.jpg'
     }
   },
   {
@@ -458,9 +458,9 @@ function Home() {
                 <div className="relative group">
                   <div className="relative w-full pt-[75%]"> {/* 4:3 Aspect Ratio */}
                     <video
+                      src={video.videoUrl}
                       className="absolute top-0 left-0 w-full h-full object-contain bg-black"
                       controls
-                      autoPlay
                       playsInline
                       preload="metadata"
                     />
