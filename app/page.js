@@ -9,9 +9,9 @@ import { CompletedProjectsCarousel } from './components/Carousel'
 
 
 const expertiseData = [
-  { title: 'Kitchen Remodeling', image: '/example.jpeg' },
-  { title: 'Bathroom Renovation', image: '/example1.jpeg' },
-  { title: 'Home Extensions', image: '/example2.jpeg' },
+  { image: '/example.jpeg' },
+  { image: '/example1.jpeg' },
+  { image: '/example2.jpeg' },
 ]
 
 const translations = {
