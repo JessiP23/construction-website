@@ -49,6 +49,18 @@ const translations = {
         title: 'Bathroom Makeover',
         description: 'See how we turn an outdated bathroom into a modern sanctuary.',
       }
+    ],
+
+    expertiseData: [
+      {
+        title: 'Kitchen Remodeling',
+      },
+      {
+        title: 'Bathroom Renovation',
+      }, 
+      {
+        title: 'Home Extensions',
+      }
     ]
   },
   es: {
@@ -84,6 +96,18 @@ const translations = {
       {
         title: 'Renovación de Baño',
         description: 'Descubre cómo convertimos un baño anticuado en un santuario moderno.'
+      }
+    ],
+
+    expertiseData: [
+      {
+        title: 'Remodelacion de cocina',
+      },
+      {
+        title: 'Renovación de baño',
+      }, 
+      {
+        title: 'Extensiones de casa',
       }
     ]
 
@@ -306,7 +330,7 @@ function Home() {
                   />
                   </div>
                   <div className="absolute inset-0 bg-[#2c1810] bg-opacity-50 flex items-center justify-center rounded-lg">
-                    <h3 className="text-white text-xl md:text-2xl font-semibold text-shadow">{item.title}</h3>
+                    <h3 className="text-white text-xl md:text-2xl font-semibold text-shadow">{translations[language].expertiseData[index].title}</h3>
                   </div>
                 </div>
               )
