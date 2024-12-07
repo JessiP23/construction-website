@@ -339,8 +339,8 @@ function Home() {
                     className="w-full h-full object-contain rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
                   />
                   </div>
-                  <div className="absolute inset-0 bg-[#2c1810] bg-opacity-50 flex items-center justify-center rounded-lg">
-                    <h3 className="text-white text-xl md:text-2xl font-semibold text-shadow">{translations[language].expertiseData[index].title}</h3>
+                  <div className="absolute inset-0 bg-[#2c1810] bg-opacity-50 flex justify-center rounded-lg">
+                    <h3 className="text-white text-xl md:text-2xl font-semibold text-shadow absolute bottom-9">{translations[language].expertiseData[index].title}</h3>
                   </div>
                 </div>
               )
