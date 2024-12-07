@@ -39,7 +39,6 @@ const translations = {
       }
     ],
 
-
     // New translations for videoData
     videoData: [
       {
