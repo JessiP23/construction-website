@@ -25,6 +25,8 @@ const translations = {
     footer: '© 2024 Titino Home Improvement. All rights reserved.',
     craftsmanship: 'Our Craftsmanship in Motion',
     completed: 'Completed Projects',
+    contact: 'Get in Touch',
+    transform: 'Transform your home with Titino Home Improvement. Contact us today!',
 
     projectsData: [
       {
@@ -75,6 +77,8 @@ const translations = {
     footer: '© 2024 Mejoras para el Hogar Titino. Todos los derechos reservados.',
     craftsmanship: 'Nuestro Trabajo en Movimiento',
     completed: 'Proyectos Completados',
+    contact: 'Ponte en Contacto',
+    transform: 'Transforma tu hogar con Mejoras para el Hogar Titino. ¡Contáctanos hoy!',
 
     projectsData: [
       {
@@ -477,8 +481,8 @@ function Home() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            <h2 className="text-4xl font-bold mb-6 animate-pulse">Get in Touch</h2>
-            <p className="text-lg mb-6">Transform your home with Titino Home Improvement. Contact us today!</p>
+            <h2 className="text-4xl font-bold mb-6 animate-pulse">{translations[language].contact}</h2>
+            <p className="text-lg mb-6">{translations[language].transform}</p>
             <div className="flex flex-col space-y-4">
               <div className="flex items-center space-x-3">
                 <Phone className="w-6 h-6 text-[#dbf240]" />
