@@ -4,11 +4,13 @@ import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
 const completedProjects = [
-  { id: 1, title: 'Modern Kitchen Remodel', image: '/completed-kitchen.jpg' },
-  { id: 2, title: 'Luxurious Bathroom Renovation', image: '/completed-bathroom.jpg' },
-  { id: 3, title: 'Cozy Living Room Makeover', image: '/completed-living-room.jpg' },
-  { id: 4, title: 'Elegant Master Bedroom', image: '/completed-bedroom.jpg' },
-  { id: 5, title: 'Spacious Home Office', image: '/completed-office.jpg' },
+  { id: 1, title: 'Modern Kitchen Remodel', image: '/comp.jpg' },
+  { id: 2, title: 'Luxurious Bathroom Renovation', image: '/comp1.jpg' },
+  { id: 3, title: 'Cozy Living Room Makeover', image: '/comp2.jpg' },
+  { id: 4, title: 'Elegant Master Bedroom', image: '/comp3.jpg' },
+  { id: 5, title: 'Spacious Home Office', image: '/comp4.jpg' },
+  { id: 5, title: 'Spacious Home Office', image: '/comp5.jpg' },
+  { id: 5, title: 'Spacious Home Office', image: '/comp6.jpg' },
 ]
 
 export function CompletedProjectsCarousel() {
