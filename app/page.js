@@ -108,8 +108,6 @@ const projectsData = [
     }
   },
   {
-    title: 'Cozy Attic Conversion',
-    description: 'Converted an unused attic into a comfortable living space with plenty of natural light.',
     images: {
       before: '/placeholder.svg?height=400&width=600',
       during: '/placeholder.svg?height=400&width=600',
