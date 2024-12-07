@@ -23,7 +23,7 @@ export function CompletedProjectsCarousel() {
     }, 16); // ~60 fps for smooth animation
 
     return () => clearInterval(interval);
-  }, []);
+  }, [totalImages]);
 
   useEffect(() => {
     if (carouselRef.current) {
