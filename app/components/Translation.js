@@ -41,13 +41,13 @@ export const translations = {
   
       expertiseData: [
         {
-          title: 'Kitchen Remodeling',
+          title: 'Kitchen Tile',
         },
         {
           title: 'Stairs Renovation',
         }, 
         {
-          title: 'Home Extensions',
+          title: 'Molding Design',
         }
       ]
     },
@@ -93,7 +93,7 @@ export const translations = {
   
       expertiseData: [
         {
-          title: 'Tile de cocina',
+          title: 'Azulejos de cocina',
         },
         {
           title: 'Renovación de escaleras',
