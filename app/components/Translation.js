@@ -49,7 +49,17 @@ export const translations = {
         {
           title: 'Molding Design',
         }
-      ]
+      ],
+
+      completedProjects: [
+        { id: 1, title: 'House Remodel', description: 'Revitalize your entire home with a comprehensive remodel that enhances both style and functionality.' },
+        { id: 2, title: 'Complex Space Renovation', description: 'Transform intricate spaces into cohesive and inviting environments that reflect your vision.' },
+        { id: 3, title: 'Paint', description: 'Refresh your garage with a professional paint job that adds both protection and aesthetic appeal.' },
+        { id: 4, title: 'Elegant Master Bedroom', description: 'Create a serene retreat with a master bedroom design that combines luxury and comfort.' },
+        { id: 5, title: 'Spacious Home Office', description: 'Design a spacious home office that fosters productivity and inspires creativity in your work environment.' },
+        { id: 6, title: 'Drywall', description: 'Achieve seamless walls with expert drywall installation that ensures a polished finish for any space.' },
+        { id: 7, title: 'Roof', description: 'Beautifully designed ceiling with dim lighting.' }
+    ]
     },
     es: {
       title: 'Mejoras para el Hogar Titino',
@@ -101,8 +111,18 @@ export const translations = {
         {
           title: 'Diseño de moldura',
         }
-      ]
+      ],
+
+      completedProjects: [
+        { id: 1, title: 'Remodelación de Casa', description: 'Revitaliza tu hogar con una remodelación integral que mejora tanto el estilo como la funcionalidad.' },
+        { id: 2, title: 'Renovación de Espacios Complejos', description: 'Transforma espacios intrincados en entornos cohesivos y acogedores que reflejan tu visión.' },
+        { id: 3, title: 'Pintura', description: 'Renueva tu garaje con un trabajo de pintura profesional que añade tanto protección como atractivo estético.' },
+        { id: 4, title: 'Elegante Dormitorio Principal', description: 'Crea un dormitorio con un diseño principal comodo.' },
+        { id: 5, title: 'Amplia Oficina en Casa', description: 'Diseña una oficina en casa amplia que fomente la productividad e inspire la creatividad en tu entorno de trabajo.' },
+        { id: 6, title: 'Paneles de Yeso', description: 'Logra paredes impecables con una instalación experta de paneles de yeso que asegura un acabado pulido para cualquier espacio.' },
+        { id: 7, title: 'Techo', description: 'Techo bellamente diseñado con iluminacion tenue.' }
+    ]
   
-    }
+    },
 }
   
