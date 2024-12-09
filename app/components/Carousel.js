@@ -5,13 +5,13 @@ import Image from 'next/image'
 import { X } from 'lucide-react'
 
 const completedProjects = [
-  { id: 1, title: 'Modern Kitchen Remodel', image: '/comp.jpg', description: 'A sleek, contemporary kitchen with state-of-the-art appliances and elegant finishes.' },
-  { id: 2, title: 'Luxurious Bathroom Renovation', image: '/comp1.jpg', description: 'A spa-like bathroom featuring a freestanding tub, walk-in shower, and custom vanity.' },
-  { id: 3, title: 'Cozy Living Room Makeover', image: '/comp2.jpg', description: 'A warm and inviting living space with custom built-ins and a stunning fireplace.' },
+  { id: 1, title: 'House Remodel', image: '/comp.jpg', description: 'A sleek, contemporary kitchen with state-of-the-art appliances and elegant finishes.' },
+  { id: 2, title: 'Complex Space Renovation', image: '/comp1.jpg', description: 'A spa-like bathroom featuring a freestanding tub, walk-in shower, and custom vanity.' },
+  { id: 3, title: 'Paint Garage', image: '/comp2.jpg', description: 'A warm and inviting living space with custom built-ins and a stunning fireplace.' },
   { id: 4, title: 'Elegant Master Bedroom', image: '/comp3.jpg', description: 'A serene master retreat with a custom headboard and luxurious window treatments.' },
   { id: 5, title: 'Spacious Home Office', image: '/comp4.jpg', description: 'A functional and stylish home office with ample storage and a comfortable workspace.' },
-  { id: 6, title: 'Contemporary Dining Area', image: '/comp5.jpg', description: 'A modern dining space perfect for entertaining, featuring a custom table and statement lighting.' },
-  { id: 7, title: 'Minimalist Entryway', image: '/comp6.jpg', description: 'A clean and welcoming entryway with clever storage solutions and minimalist decor.' },
+  { id: 6, title: 'Drywall', image: '/comp5.jpg', description: 'A modern dining space perfect for entertaining, featuring a custom table and statement lighting.' },
+  { id: 7, title: 'Rooftop', image: '/comp6.jpg', description: 'A clean and welcoming entryway with clever storage solutions and minimalist decor.' },
 ]
 
 export function CompletedProjectsCarousel () {
