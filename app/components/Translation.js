@@ -34,8 +34,8 @@ export const translations = {
           description: 'Watch our house renovation from start to finish.',
         },
         {
-          title: 'Bathroom Makeover',
-          description: 'See how we turn an outdated bathroom into a modern sanctuary.',
+          title: 'Tile Renovation',
+          description: 'See how we turn an outdated floor into a modern masterpiece.', 
         }
       ],
   
@@ -86,8 +86,8 @@ export const translations = {
           description: 'Mira nuestra renovación de casa de principio a fin.'
         },
         {
-          title: 'Renovación de Baño',
-          description: 'Descubre cómo convertimos un baño anticuado en un santuario moderno.'
+          title: 'Renovación de azulejo',
+          description: 'Vea cómo convertimos un piso anticuado en una obra maestra moderna.'
         }
       ],
   
