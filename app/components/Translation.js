@@ -30,8 +30,8 @@ export const translations = {
       // New translations for videoData
       videoData: [
         {
-          title: 'Kitchen Transformation',
-          description: 'Watch our complete kitchen renovation process from start to finish.',
+          title: 'House Renovation',
+          description: 'Watch our house renovation from start to finish.',
         },
         {
           title: 'Bathroom Makeover',
@@ -82,8 +82,8 @@ export const translations = {
       // Spanish translations for videoData
       videoData: [
         {
-          title: 'Transformación de Cocina',
-          description: 'Mira nuestro proceso completo de renovación de cocina de principio a fin.'
+          title: 'Renovación de Casa',
+          description: 'Mira nuestra renovación de casa de principio a fin.'
         },
         {
           title: 'Renovación de Baño',
