@@ -15,15 +15,15 @@ export const translations = {
       projectsData: [
         {
           title: 'Bathroom Renovation',
-          description: 'Complete kitchen renovation with custom cabinetry and state-of-the-art appliances.',
+          description: 'Transform your bathroom into a modern oasis with high-quality fixtures and elegant design.',
         },
         {
-          title: "Luxurious Bathroom Spa",
-          description: "Transformed an outdated bathroom into a relaxing spa-like retreat.",
+          title: "Drywall",
+          description: "Expert drywall installation and finishing to create a flawless and durable interior surface.",
         },
         {
-          title: 'Cozy Attic Conversion',
-          description: 'Converted an unused attic into a comfortable living space with plenty of natural light.',
+          title: 'Basement Remodeling',
+          description: 'Revitalize your basement into a functional and stylish living space tailored to your needs.',
         }
       ],
   
@@ -67,15 +67,15 @@ export const translations = {
       projectsData: [
         {
           title: 'Renovación de Baño',
-          description: 'Renovación completa de cocina con gabinetes personalizados y electrodomésticos de última generación.'
+          description: 'Transforme su baño en un oasis moderno con accesorios de alta calidad y un diseño elegante.'
         },
         {
-          title: 'Drivewall',
-          description: 'Transformamos un baño anticuado en un retiro relajante tipo spa.'
+          title: 'Panel de yeso',
+          description: 'Instalación y acabado experto de paneles de yeso para crear una superficie interior impecable y duradera..'
         },
         {
-          title: 'Conversión de Ático Acogedor',
-          description: 'Convertimos un ático sin uso en un espacio habitable cómodo con abundante luz natural.'
+          title: 'Remodelación de Sótano',
+          description: 'Revitalice su sótano y conviértalo en un espacio habitable funcional y elegante adaptado a sus necesidades.'
         }
       ],
   
