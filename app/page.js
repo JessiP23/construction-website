@@ -335,7 +335,7 @@ function Home() {
                 <div className="flex-grow relative group" style={{height: '450px'}}>
                   {project.images[project.activeImageType].toLowerCase().endsWith('.mov') || 
                   project.images[project.activeImageType].toLowerCase().endsWith('.mp4') ? (
-                    <video
+                    <LazyVideo
                       src={project.images[project.activeImageType]}
                       className="w-full h-full object-cover 
                         transition-transform duration-300 group-hover:scale-105"
