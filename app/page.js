@@ -10,6 +10,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { translations } from './components/Translation'
 import LazyVideo from './components/LazyVideo'
 import { cacheData, getCachedData } from './utils/cache'
+import { CTAModal } from './components/CtaButton'
 
 
 const expertiseData = [
@@ -82,6 +83,8 @@ function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext)
   const { toggleLanguage } = useContext(LanguageContext)
 
+  const [isCTAModalOpen, setIsCTAModalOpen] = useState(false)
+
   useEffect(() => {
     const cachedProjects = getCachedData('activeProjects')
     if (cachedProjects) {
@@ -130,6 +133,14 @@ function Home() {
   const textColor = theme === 'dark' ? 'text-gray-100' : 'text-[#2c1810]'
   const cardBg = theme === 'dark' ? 'bg-gray-800' : 'bg-white'
   const sectionBg = theme === 'dark' ? 'bg-gray-900' : 'bg-[#f8f5f0]'
+
+  const handleCTAClick = () => {
+    setIsCTAModalOpen(true)
+  }
+
+  const handleCTAModalClose = () => {
+    setIsCTAModalOpen(false)
+  }
 
   return (
     <main className={`min-h-screen ${bgColor} ${textColor} min-h-screen`}>
@@ -227,7 +238,7 @@ function Home() {
             <p className="text-lg md:text-xl mb-8 leading-relaxed text-shadow animate-fade-in-up delay-200">
               {translations[language].description}
             </p>
-            <button className="bg-[#dbf240] text-[#2c1810] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#3f3def] hover:text-white transition-all duration-300 shadow-lg animate-fade-in-up delay-400">
+            <button onClick={handleCTAClick} className="bg-[#dbf240] text-[#2c1810] px-6 py-3 rounded-full text-lg font-semibold hover:bg-[#3f3def] hover:text-white transition-all duration-300 shadow-lg animate-fade-in-up delay-400">
               {translations[language].ctaButton}
             </button>
           </div>
@@ -244,6 +255,12 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <CTAModal 
+        isOpen={isCTAModalOpen} 
+        onClose={handleCTAModalClose} 
+        theme={theme}
+      />
 
       <section className={`py-20 ${cardBg}`}>
         <div className="container mx-auto px-4">

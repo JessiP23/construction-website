@@ -10,11 +10,15 @@
     "export": "next export"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "emailjs": "^4.0.3",
     "framer-motion": "^11.13.1",
     "lucide-react": "^0.465.0",
     "next": "15.0.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-confetti": "^6.1.0",
+    "react-dom": "^18.2.0",
+    "react-use": "^17.5.1"
   },
   "devDependencies": {
     "eslint": "^8",
