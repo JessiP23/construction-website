@@ -44,7 +44,7 @@ export const translations = {
           title: 'Kitchen Remodeling',
         },
         {
-          title: 'Bathroom Renovation',
+          title: 'Stairs Renovation',
         }, 
         {
           title: 'Home Extensions',
