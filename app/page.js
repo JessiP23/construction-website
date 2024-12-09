@@ -8,6 +8,8 @@ import { LanguageContext, ThemeContext, LanguageProvider, ThemeProvider } from '
 import { CompletedProjectsCarousel } from './components/Carousel'
 import { AnimatePresence, motion } from 'framer-motion'
 import { translations } from './components/Translation'
+import LazyVideo from './components/LazyVideo'
+import { cacheData, getCachedData } from './utils/cache'
 
 
 const expertiseData = [
@@ -80,6 +82,20 @@ function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext)
   const { toggleLanguage } = useContext(LanguageContext)
 
+  useEffect(() => {
+    const cachedProjects = getCachedData('activeProjects')
+    if (cachedProjects) {
+      setActiveProjects(cachedProjects)
+    } else {
+      const newActiveProjects = projectsData.map(project => ({
+        ...project,
+        activeImageType: 'after'
+      }))
+      setActiveProjects(newActiveProjects)
+      cacheData('activeProjects', newActiveProjects, 300000) // Cache for 5 minutes
+    }
+  }, [])
+
   const handleImageTypeChange = (projectIndex, imageType) => {
     const updatedProjects = [...activeProjects]
     updatedProjects[projectIndex] = {
@@ -87,6 +103,7 @@ function Home() {
       activeImageType: imageType
     }
     setActiveProjects(updatedProjects)
+    cacheData('activeProjects', updatedProjects, 300000) // Cache for 5 minutes
   }
 
   useEffect(() => {
