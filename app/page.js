@@ -402,7 +402,7 @@ function Home() {
                 </div>
                 <div className="relative group">
                   <div className="relative w-full pt-[75%]"> {/* 4:3 Aspect Ratio */}
-                    <video
+                    <LazyVideo
                       src={video.videoUrl}
                       className="absolute top-0 left-0 w-full h-full object-contain bg-black"
                       controls
